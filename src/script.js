@@ -30,4 +30,15 @@ addEventListener("submit", (event) => {
     2. If they are, call renderSuccess()
     3. If they are not, call renderError()
    */
+    for (const user of usersTable) {
+      //console.log(`id:  ${user.id}, username: ${user.username}, password: ${user.password}`);
+      if (email == user.username && password == user.password) {
+        renderSuccess();
+      }
+    }
+  
+    if (document.getElementById("success-message").hidden == true) { //this should be true if a user matched
+      renderError();
+    }
+
 });
